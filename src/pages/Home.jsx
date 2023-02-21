@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HeaderInfo from "../components/headerInfo";
+import InfoDiv from "../components/HeaderInfo";
 import Header from "../components/header"
 
 const Container = styled.div``;
@@ -8,7 +8,7 @@ const Container = styled.div``;
 function Home() {
   return (
     <Container>
-      <HeaderInfo />
+      <InfoDiv />
       <Header/>
     </Container>
   );

@@ -1,9 +1,12 @@
 import React from 'react'
+import Header from './components/Header'
+import HeaderInfo from './components/HeaderInfo'
 
 export default function App() {
   return (
-    <div>App Github
-      <p>Orca Busiess Solutions</p>   
+    <div>
+      <HeaderInfo/>
+      <Header/>
     </div>
   )
 }
