@@ -1,12 +1,10 @@
 import React from 'react'
-import Header from './components/Header'
-import HeaderInfo from './components/HeaderInfo'
+import Home from './pages/Home'
 
 export default function App() {
   return (
     <div>
-      <HeaderInfo/>
-      <Header/>
+      <Home/>
     </div>
   )
 }
