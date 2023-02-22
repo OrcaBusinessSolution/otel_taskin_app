@@ -8,28 +8,34 @@ const InfoDiv = styled.div`
   background-color: #fff;
   border-bottom: 1px solid #f2f2f2;
   color: #858a99;
- // position: relative;
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   flex: 1;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
- 
+  @media only screen and (max-width: 958px) {
+    flex-direction: column;
+  } 
+  & p:hover{
+    font-size: 18px;
+    font-weight: bold;
+  }
 `;
 const ContactDiv = styled.div`
   background-color: #fff;
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
 `;
 function HeaderInfo() {
   return (
     <InfoDiv>
-      <p>Taşkın Otel'e hoş geldiniz</p>
-      <ContactDiv >
+      <p>
+        <i>Taşkın Otel'e hoş geldiniz</i>
+      </p>
+      <ContactDiv>
         <ListItemButton component="a" href="tel:02847141706">
           <Chip icon={<MdPhone />} size={"small"} label="0284 714 1706" />
-          {/* <a href="tel:02847141706">02847141706 </a> */}
         </ListItemButton>
         <ListItemButton component="a" href="mailto:info@oteltaskin.com">
           <Chip
@@ -37,7 +43,6 @@ function HeaderInfo() {
             size={"small"}
             label="info@oteltaskin.com"
           />
-          {/* <a href="mailto:info@oteltaskin.com">info@oteltaskin.com </a> */}
         </ListItemButton>
       </ContactDiv>
     </InfoDiv>
