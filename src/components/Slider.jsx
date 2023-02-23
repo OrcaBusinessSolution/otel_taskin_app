@@ -35,10 +35,10 @@ function Slider() {
     <SliderDiv>
       <Slide {...properties}> 
         <ImageDiv src={"./pictures/oda1.JPG"} />
-        <ImageDiv src={"./pictures/oda1.JPG"} />
-        <ImageDiv src={"./pictures/oda1.JPG"} />
-        <ImageDiv src={"./pictures/oda1.JPG"} />
-        <ImageDiv src={"./pictures/oda1.JPG"} />
+        <ImageDiv src={"./pictures/oda2.JPG"} />
+        <ImageDiv src={"./pictures/standart.JPG"} />
+        <ImageDiv src={"./pictures/double.JPG"} />
+        <ImageDiv src={"./pictures/triple.JPG"} />
       </Slide>
     </SliderDiv>
   );
