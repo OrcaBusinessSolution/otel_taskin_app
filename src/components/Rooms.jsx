@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Container = styled.div`
   display: flex;
-  flex:1;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   background-color: #f1f0ed;
@@ -28,17 +28,16 @@ const HeaderDiv = styled.div`
 `;
 const RoomsDiv = styled.div`
   display: flex;
-  flex:1;
+  flex: 1;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-   @media only screen and (max-width: 958px) {
+  @media only screen and (max-width: 958px) {
     flex-direction: column;
   }
 `;
 const RoomDiv = styled.div`
-  background-color: #fff;
   margin: 1rem;
   & h5 {
     text-align: center;
@@ -50,6 +49,10 @@ const RoomDiv = styled.div`
   }
   & img:hover {
     opacity: 1;
+    transform: translate(-20px);
+    transition: all .6s ease-in-out;
+    -webkit-transform: translate(-20px);
+    cursor:pointer;
   }
 `;
 
@@ -60,17 +63,20 @@ const ImageDiv = styled.img`
 
 const RoomsButton = styled.button`
   align-items: center;
+  border-radius: 12px;
+  border: none;
   text-align: center;
-  border: 3px solid #c12200;
-  color: #c12200;
   border-radius: 4px;
-  line-height: 2.2rem;
+  line-height: 1.7rem;
   font-weight: bold;
+  border-radius: 15px;
   letter-spacing: 0.05rem;
   margin-top: 4rem;
+  color: #fff;
+  background-color: #deb666;
   &:hover {
-    background-color: #c12200;
-    color: #fff;
+    background-color: #f2f2f2;
+    color: #deb666;
   }
 `;
 
@@ -82,21 +88,20 @@ function Rooms() {
         <p>Odalarımıza şimdi bir göz atın</p>
       </HeaderDiv>
       <RoomsDiv>
-      <RoomDiv>
-          <ImageDiv src={"./pictures/oda1.JPG"}></ImageDiv>
+        <RoomDiv>
+          <ImageDiv src={"./pictures/standart.JPG"}></ImageDiv>
           <h5>Tek Kişilik Oda</h5>
         </RoomDiv>
 
         <RoomDiv>
-          <ImageDiv src={"./pictures/oda1.JPG"}></ImageDiv>
+          <ImageDiv src={"./pictures/double.JPG"}></ImageDiv>
           <h5>İki Kişilik Oda</h5>
         </RoomDiv>
 
         <RoomDiv>
-          <ImageDiv src={"./pictures/oda1.JPG"}></ImageDiv>
+          <ImageDiv src={"./pictures/triple.JPG"}></ImageDiv>
           <h5>Üç Kişilik Oda</h5>
         </RoomDiv>
-
       </RoomsDiv>
       <RoomsButton>
         ODALARI GÖRÜNTÜLE <ArrowForwardIosIcon fontSize="small" />
