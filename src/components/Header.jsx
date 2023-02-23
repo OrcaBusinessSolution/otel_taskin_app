@@ -1,4 +1,4 @@
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 import React from "react";
 import styled from "styled-components";
 
@@ -39,23 +39,23 @@ const ImageDiv = styled.img`
 function Header() {
   return (
     <Container>
-      <Link href="http://oteltaskin.com/">
+      <Link to="http://oteltaskin.com/">
         <ImageDiv src={"./pictures/logo.png"} alt="otel, taşkın otel, keşan"></ImageDiv>
       </Link><hr/>
       <HeaderDiv>
-        <Link href="#" underline="none">
+        <Link to="#" underline="none">
           ANASAYFA
         </Link>
-        <Link href="#" underline="none">
+        <Link to="rooms" underline="none">
           ODALAR
         </Link>
-        <Link href="#" underline="none">
+        <Link to="gallery" underline="none">
           GALERİ
         </Link>
-        <Link href="#" underline="none">
+        <Link to="reservation" underline="none">
           REZERVASYON
         </Link>
-        <Link href="#" underline="none">
+        <Link to="communication" underline="none">
           İLETİŞİM
         </Link>
       </HeaderDiv>
