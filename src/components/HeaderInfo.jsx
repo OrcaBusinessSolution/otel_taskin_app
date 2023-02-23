@@ -12,7 +12,7 @@ const InfoDiv = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   @media only screen and (max-width: 958px) {
     flex-direction: column;
