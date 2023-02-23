@@ -4,7 +4,9 @@ import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 
-const Container = styled.div``;
+const Container = styled.div`
+margin-top:-3rem;
+`;
 
 const CopyRight = styled.div`
   font-family: "Lato", sans-serif;
