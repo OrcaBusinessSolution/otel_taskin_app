@@ -3,7 +3,6 @@ import { Box, TextField } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
-
 const FormDiv = styled.div`
   width: 65%;
   @media only screen and (max-width: 958px) {
@@ -39,20 +38,20 @@ function FormComponents() {
         noValidate
         autoComplete="off"
       >
-        <TextField fullWidth id="name" label="İsminiz" variant="outlined" />
+        <TextField fullWidth id="name" label="İsminiz" variant="filled" />
         <TextField
           fullWidth
           id="phoneNumber"
           label="Telefon Numaranız"
-          variant="outlined"
+          variant="filled"
         />
         <br />
         <TextField
           id="emailAdress"
           label="E-Mail Adresiniz "
-          variant="outlined"
+          variant="filled"
         />
-        <TextField id="subject" label="Konu" variant="outlined" />
+        <TextField id="subject" label="Konu" variant="filled" />
       </Box>
       <Box
         component="form"
@@ -62,7 +61,14 @@ function FormComponents() {
         noValidate
         autoComplete="off"
       >
-        <Textarea minRows={5} placeholder="Mesajınız" />
+        <TextField
+          id="filled-multiline-static"
+          label="Mesajınız"
+          multiline
+          rows={4}
+          variant="filled"
+        />
+        {/* <Textarea filled minRows={5} placeholder="Mesajınız" /> */}
         <br />
       </Box>
       <Box
