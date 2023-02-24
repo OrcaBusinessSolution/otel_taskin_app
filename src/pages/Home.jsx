@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import HeaderInfo from "../components/HeaderInfo";
-import Header from "../components/Header";
-import Slider from "../components/Slider";
-import Rooms from "../components/Rooms";
-import Footer from "../components/Footer";
+import HeaderInfo from "../components/GlobalComponents/HeaderInfoComponent";
+import Header from "../components/GlobalComponents/HeaderComponent";
+import Slider from "../components/HomePageComponents/SliderComponent";
+import Rooms from "../components/HomePageComponents/RoomsComponent";
+import Footer from "../components/GlobalComponents/FooterComponent";
 
 const Container = styled.div``;
 
