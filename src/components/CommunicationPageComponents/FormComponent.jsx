@@ -1,4 +1,3 @@
-import { Textarea } from "@mui/joy";
 import { Box, TextField } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
@@ -68,7 +67,6 @@ function FormComponents() {
           rows={4}
           variant="filled"
         />
-        {/* <Textarea filled minRows={5} placeholder="Mesajınız" /> */}
         <br />
       </Box>
       <Box
