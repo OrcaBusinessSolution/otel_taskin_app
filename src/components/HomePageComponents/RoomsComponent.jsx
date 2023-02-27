@@ -52,6 +52,7 @@ const RoomDiv = styled.div`
     transition: all .6s ease-in-out;
     -webkit-transform: translate(-20px);
     cursor:pointer;
+    box-shadow: 10px 10px 10px #606060;
   }
 `;
 
@@ -89,17 +90,17 @@ function Rooms() {
       <RoomsDiv>
         <RoomDiv>
           <ImageDiv src={"./pictures/standart.JPG"}></ImageDiv>
-          <h5>Tek Kişilik Oda</h5>
+          <h5>Standart Oda</h5>
         </RoomDiv>
 
         <RoomDiv>
           <ImageDiv src={"./pictures/double.JPG"}></ImageDiv>
-          <h5>İki Kişilik Oda</h5>
+          <h5>Double Oda</h5>
         </RoomDiv>
 
         <RoomDiv>
           <ImageDiv src={"./pictures/triple.JPG"}></ImageDiv>
-          <h5>Üç Kişilik Oda</h5>
+          <h5>Triple Oda</h5>
         </RoomDiv>
       </RoomsDiv>
       <RoomsButton>
