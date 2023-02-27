@@ -23,7 +23,7 @@ const RoomDiv = styled.div`
     transform: translate(-20px);
     -webkit-transform: translate(-20px);
     transition: all 0.6s ease-in-out;
-
+    box-shadow: 10px 10px 10px #606060;
     cursor: pointer;
   }
   @media only screen and (max-width: 958px) {
@@ -94,7 +94,7 @@ function RoomsComponent() {
       <RoomDiv>
         <ImageDiv src={"./pictures/standart.JPG"}></ImageDiv>
         <InfoDiv>
-          <h5>Tek Kişilik Oda</h5>
+          <h5>Standart Oda</h5>
           <p>Tek kişiler için uygun olarak tasarlanmış Standart odamız</p>
           <RoomsButton>
             DETAYLI BİLGİ <ArrowForwardIosIcon fontSize="small" />
@@ -107,7 +107,7 @@ function RoomsComponent() {
       <RoomDiv>
         <ImageDiv src={"./pictures/double.JPG"}></ImageDiv>
         <InfoDiv>
-          <h5>İki Kişilik Oda</h5>
+          <h5>Double Oda</h5>
           <p>İki kişilik ihtiyaçlar için tasarlanmış Double odamız</p>
           <RoomsButton>
             DETAYLI BİLGİ <ArrowForwardIosIcon fontSize="small" />
@@ -120,7 +120,7 @@ function RoomsComponent() {
       <RoomDiv>
         <ImageDiv src={"./pictures/triple.JPG"}></ImageDiv>
         <InfoDiv>
-          <h5>Üç Kişilik Oda</h5>
+          <h5>Triple Oda</h5>
           <p>
             Üç ve daha fazla kişilik ihtiyaçlar için tasarlanmış Triple odamız
           </p>
