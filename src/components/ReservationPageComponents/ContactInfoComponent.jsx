@@ -16,7 +16,6 @@ function ContactInfoComponent() {
   return (
     <Box
       component="form"
-      noValidate
       autoComplete="off"
       sx={{
         "& > :not(style)": { marginTop: "1rem", width: "15rem" },
@@ -29,10 +28,13 @@ function ContactInfoComponent() {
         value={phoneNumber}
         onChange={handleChangePhoneNumber}
         helperText="Telefon numaranızı girin"
+        type="tel"
       />
       <TextField
+        name="email"
         id="email"
         label="E-Mail"
+        type="email"
         variant="outlined"
         onChange={handleChangeEmail}
         value={email}
