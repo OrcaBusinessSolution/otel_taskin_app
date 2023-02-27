@@ -5,6 +5,7 @@ import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 
 const Container = styled.div`
+border-top:1px solid #E2E2E2;
 margin-top:-3rem;
 `;
 
@@ -68,7 +69,7 @@ function Footer() {
         <ContactDiv>
           <h4>İLETİŞİM</h4>
           <FmdGoodOutlinedIcon fontSize="small"></FmdGoodOutlinedIcon>
-          <p>İspat Cami Mahallesi, Kurtuluş Cad. No:8 Edirne/Keşan, Türkiye</p>
+          <p>İspat Cami Mahallesi, Kurtuluş Caddesi No:8 <br/>Keşan/Edirne, Türkiye</p>
           <PhoneOutlinedIcon></PhoneOutlinedIcon>
           <p>0284 714 17 06</p>
           <EmailOutlinedIcon></EmailOutlinedIcon>
