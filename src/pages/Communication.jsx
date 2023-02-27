@@ -4,8 +4,6 @@ import HeaderInfo from "../components/GlobalComponents/HeaderInfoComponent";
 import Header from "../components/GlobalComponents/HeaderComponent";
 import Footer from "../components/GlobalComponents/FooterComponent";
 import { HeaderName } from "../pages/Rooms";
-import { Box, TextField } from "@mui/material";
-import { Textarea } from "@mui/joy";
 import FormComponents from "../components/CommunicationPageComponents/FormComponent";
 import MapComponent from "../components/CommunicationPageComponents/MapComponent";
 
