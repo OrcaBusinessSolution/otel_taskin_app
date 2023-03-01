@@ -8,19 +8,16 @@ import FormComponents from "../components/CommunicationPageComponents/FormCompon
 import MapComponent from "../components/CommunicationPageComponents/MapComponent";
 
 const Container = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 2rem;
-  margin-bottom: 3rem;
+margin-bottom: 5rem;
 `;
 const TotalDiv = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
+  justify-content:space-around;
+  text-align:center;
   padding: 2rem;
   margin-bottom: -1.5rem;
-  justify-content: center;
   @media only screen and (max-width: 958px) {
     flex-direction: column;
   }
