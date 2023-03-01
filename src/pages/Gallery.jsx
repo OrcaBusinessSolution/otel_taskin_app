@@ -4,7 +4,7 @@ import { HeaderName } from "../pages/Rooms";
 import HeaderInfo from "../components/GlobalComponents/HeaderInfoComponent";
 import Header from "../components/GlobalComponents/HeaderComponent";
 import Footer from "../components/GlobalComponents/FooterComponent";
-import GallerySlide from "../components/GalleryPageComponents/GallerySlide"
+import PhotoGallery from "../components/GalleryPageComponents/PhotoGallery";
 
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ function Gallery() {
         <HeaderName>
           <h1>Galeri</h1>
         </HeaderName>
-        <GallerySlide/>
+        <PhotoGallery/>
       </Container>
       <Footer/>
     </>
