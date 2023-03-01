@@ -1,5 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import DoubleRoomDetails from "./pages/DoubleRoomDetails";
+import StandartRoomDetails from "./pages/StandartRoomDetails";
+import TripleRoomDetail from "./pages/TripleRoomDetail";
 import Communication from "./pages/Communication";
 import Gallery from "./pages/Gallery";
 import Home from "./pages/Home";
@@ -9,11 +12,14 @@ import Rooms from "./pages/Rooms";
 export default function App() {
   return (
     <Routes>
-      <Route index element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="rooms" element={<Rooms />} />
       <Route path="gallery" element={<Gallery />} />
       <Route path="reservation" element={<Reservation />} />
       <Route path="communication" element={<Communication />} />
+      <Route path="standartRoom" element={<StandartRoomDetails />} />
+      <Route path="doubleRoom" element={<DoubleRoomDetails />} />
+      <Route path="tripleRoom" element={<TripleRoomDetail />} />
     </Routes>
   );
 }
