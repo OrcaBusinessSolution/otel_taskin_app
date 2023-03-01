@@ -4,14 +4,10 @@ import { HeaderName } from "../pages/Rooms";
 import HeaderInfo from "../components/GlobalComponents/HeaderInfoComponent";
 import Header from "../components/GlobalComponents/HeaderComponent";
 import Footer from "../components/GlobalComponents/FooterComponent";
-import FormComponent from "../components/ReservationPageComponents/FormComponent"
+import FormComponent from "../components/ReservationPageComponents/FormComponent";
 
 const Container = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 `;
 
 function Reservation() {
@@ -23,9 +19,9 @@ function Reservation() {
         <HeaderName>
           <h1>Rezervasyon</h1>
         </HeaderName>
-        <FormComponent/>
+        <FormComponent />
       </Container>
-      <Footer/>
+      <Footer />
     </>
   );
 }
