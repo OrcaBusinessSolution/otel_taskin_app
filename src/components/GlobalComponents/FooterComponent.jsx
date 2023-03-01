@@ -29,15 +29,14 @@ const ContentDiv = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 2rem;
+  padding: 1rem;
   @media only screen and (max-width: 958px) {
     flex-direction: column;
   }
 `;
 
 const ImageLogo = styled.img`
-  width: 20%;
-  margin-left: 2rem;
+  width: 13rem;
 `;
 
 const ContactDiv = styled.div`
@@ -51,11 +50,12 @@ const ContactDiv = styled.div`
     color: #606060;
     font-family: "Nunito", sans-serif;
     font-weight: 700;
+    font-size: 17px;
   }
   & p {
     color: #858a99;
     font-family: "Lato", sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 400;
   }
 `;
