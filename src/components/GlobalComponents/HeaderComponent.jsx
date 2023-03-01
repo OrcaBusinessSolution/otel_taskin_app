@@ -32,30 +32,30 @@ const HeaderDiv = styled.div`
 `;
 
 const ImageDiv = styled.img`
-  height: 4em;
+  height: 5em;
   margin-left: 2rem;
 `;
 
 function Header() {
   return (
     <Container>
-      <Link to="http://oteltaskin.com/">
+      <Link to="/">
         <ImageDiv src={"./pictures/logo.png"} alt="otel, taşkın otel, keşan"></ImageDiv>
       </Link><hr/>
       <HeaderDiv>
-        <Link to="#" underline="none">
+        <Link to="/" underline="none">
           ANASAYFA
         </Link>
-        <Link to="rooms" underline="none">
+        <Link to="/rooms" underline="none">
           ODALAR
         </Link>
-        <Link to="gallery" underline="none">
+        <Link to="/gallery" underline="none">
           GALERİ
         </Link>
-        <Link to="reservation" underline="none">
+        <Link to="/reservation" underline="none">
           REZERVASYON
         </Link>
-        <Link to="communication" underline="none">
+        <Link to="/communication" underline="none">
           İLETİŞİM
         </Link>
       </HeaderDiv>
