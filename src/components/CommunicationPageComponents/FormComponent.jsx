@@ -2,10 +2,15 @@ import { Box, TextField } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
+
 const FormDiv = styled.div`
-  width: 65%;
-  @media only screen and (max-width: 958px) {
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  @media only screen and (max-width: 758px) {
     width: 100%;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     flex-direction: column;
   }
@@ -32,30 +37,30 @@ function FormComponents() {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 5, width: "20rem" },
+          "& > :not(style)": { m: 2, width: "15rem" },
         }}
         noValidate
         autoComplete="off"
       >
-        <TextField fullWidth id="name" label="İsminiz" variant="filled" />
+        <TextField fullWidth id="name" label="İsminiz" variant="outlined" />
         <TextField
           fullWidth
           id="phoneNumber"
           label="Telefon Numaranız"
-          variant="filled"
+          variant="outlined"
         />
         <br />
         <TextField
           id="emailAdress"
           label="E-Mail Adresiniz "
-          variant="filled"
+          variant="outlined"
         />
-        <TextField id="subject" label="Konu" variant="filled" />
+        <TextField id="subject" label="Konu" variant="outlined" />
       </Box>
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 5, width: "23rem" },
+          "& > :not(style)": { m: 2, width: "20rem" },
         }}
         noValidate
         autoComplete="off"
@@ -65,7 +70,7 @@ function FormComponents() {
           label="Mesajınız"
           multiline
           rows={4}
-          variant="filled"
+          variant="outlined"
         />
         <br />
       </Box>
