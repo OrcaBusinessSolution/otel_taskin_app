@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Link } from "react-router-dom";
 
 const RoomsDiv = styled.div`
   display: flex;
@@ -21,10 +22,10 @@ const RoomDiv = styled.div`
   & img:hover {
     opacity: 1;
     transform: translate(-20px);
-    -webkit-transform: translate(-20px);
     transition: all 0.6s ease-in-out;
-    box-shadow: 10px 10px 10px #606060;
+    -webkit-transform: translate(0px, 10px);
     cursor: pointer;
+    box-shadow: 15px 15px 15px #606060;
   }
   @media only screen and (max-width: 958px) {
     flex-direction: column;
@@ -96,12 +97,16 @@ function RoomsComponent() {
         <InfoDiv>
           <h5>Standart Oda</h5>
           <p>Tek kişiler için uygun olarak tasarlanmış Standart odamız</p>
-          <RoomsButton>
-            DETAYLI BİLGİ <ArrowForwardIosIcon fontSize="small" />
-          </RoomsButton>
-          <RoomsButton>
-            REZERVASYON <ArrowForwardIosIcon fontSize="small" />
-          </RoomsButton>
+          <Link to="/reservation">
+            <RoomsButton>
+              REZERVASYON <ArrowForwardIosIcon fontSize="small" />
+            </RoomsButton>
+          </Link>
+          <Link to="/standartRoom">
+            <RoomsButton>
+              DETAYLI BİLGİ <ArrowForwardIosIcon fontSize="small" />
+            </RoomsButton>
+          </Link>
         </InfoDiv>
       </RoomDiv>
       <RoomDiv>
@@ -109,12 +114,16 @@ function RoomsComponent() {
         <InfoDiv>
           <h5>Double Oda</h5>
           <p>İki kişilik ihtiyaçlar için tasarlanmış Double odamız</p>
-          <RoomsButton>
-            DETAYLI BİLGİ <ArrowForwardIosIcon fontSize="small" />
-          </RoomsButton>
-          <RoomsButton>
-            REZERVASYON <ArrowForwardIosIcon fontSize="small" />
-          </RoomsButton>
+          <Link to="/reservation">
+            <RoomsButton>
+              REZERVASYON <ArrowForwardIosIcon fontSize="small" />
+            </RoomsButton>
+          </Link>
+          <Link to="/doubleRoom">
+            <RoomsButton>
+              DETAYLI BİLGİ <ArrowForwardIosIcon fontSize="small" />
+            </RoomsButton>
+          </Link>
         </InfoDiv>
       </RoomDiv>
       <RoomDiv>
@@ -124,12 +133,16 @@ function RoomsComponent() {
           <p>
             Üç ve daha fazla kişilik ihtiyaçlar için tasarlanmış Triple odamız
           </p>
-          <RoomsButton>
-            DETAYLI BİLGİ <ArrowForwardIosIcon fontSize="small" />
-          </RoomsButton>
-          <RoomsButton>
-            REZERVASYON <ArrowForwardIosIcon fontSize="small" />
-          </RoomsButton>
+          <Link to="/reservation">
+            <RoomsButton>
+              REZERVASYON <ArrowForwardIosIcon fontSize="small" />
+            </RoomsButton>
+          </Link>
+          <Link to="/tripleRoom">
+            <RoomsButton>
+              DETAYLI BİLGİ <ArrowForwardIosIcon fontSize="small" />
+            </RoomsButton>
+          </Link>
         </InfoDiv>
       </RoomDiv>
     </RoomsDiv>
