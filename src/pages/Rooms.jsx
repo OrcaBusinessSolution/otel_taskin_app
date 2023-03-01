@@ -5,13 +5,7 @@ import Footer from "../components/GlobalComponents/FooterComponent";
 import styled from "styled-components";
 import RoomsComponent from "../components/RoomPageComponent/RoomsComponent";
 
-const Container = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 2rem;
-  justify-content: center;
-`;
+const Container = styled.div``;
 
 export const HeaderName = styled.div`
   height: 8rem;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -49,9 +50,9 @@ const RoomDiv = styled.div`
   & img:hover {
     opacity: 1;
     transform: translate(-20px);
-    transition: all .6s ease-in-out;
+    transition: all 0.6s ease-in-out;
     -webkit-transform: translate(-20px);
-    cursor:pointer;
+    cursor: pointer;
     box-shadow: 10px 10px 10px #606060;
   }
 `;
@@ -103,9 +104,11 @@ function Rooms() {
           <h5>Triple Oda</h5>
         </RoomDiv>
       </RoomsDiv>
-      <RoomsButton>
-        ODALARI GÖRÜNTÜLE <ArrowForwardIosIcon fontSize="small" />
-      </RoomsButton>
+      <Link to="rooms">
+        <RoomsButton>
+          ODALARI GÖRÜNTÜLE <ArrowForwardIosIcon fontSize="small" />
+        </RoomsButton>
+      </Link>
     </Container>
   );
 }
