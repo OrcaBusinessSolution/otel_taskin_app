@@ -13,7 +13,7 @@ function DateComponents() {
         label="Giriş Tarihi"
         type="date"
         defaultValue={currentDate}
-        sx={{ width: 240,  marginTop: 3 }}
+        sx={{ width:200,  marginTop: 3 }}
         InputLabelProps={{
           shrink: true,
         }}
@@ -23,7 +23,7 @@ function DateComponents() {
         label="Çıkış Tarihi"
         type="date"
         defaultValue={currentDate}
-        sx={{ width: 240, marginTop: 3 }}
+        sx={{ width: 200, marginTop: 3 }}
         InputLabelProps={{
           shrink: true,
         }}

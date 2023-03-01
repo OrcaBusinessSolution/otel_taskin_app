@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 const Forms = styled.div`
-  width: 30rem;
+  width: 25rem;
 `;
 
 function FormComponent() {

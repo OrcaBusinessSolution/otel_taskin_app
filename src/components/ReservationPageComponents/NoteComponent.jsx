@@ -6,7 +6,7 @@ function NoteComponent() {
     <Box
       component="form"
       sx={{
-        "& > :not(style)": { width: "30rem", marginTop:"3rem" },
+        "& > :not(style)": { width: "25rem", marginTop:"3rem" },
       }}
       noValidate
       autoComplete="off"
@@ -15,7 +15,7 @@ function NoteComponent() {
         id="optionalMessage"
         label="Eklemek istedikleriniz varsa lütfen bizimle paylaşın"
         multiline
-        rows={4}
+        rows={3}
         variant="outlined"
       />
       <br />

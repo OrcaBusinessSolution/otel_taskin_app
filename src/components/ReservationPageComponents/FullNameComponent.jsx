@@ -20,7 +20,7 @@ function FullNameComponent() {
       noValidate
       autoComplete="off"
       sx={{
-        "& > :not(style)": { marginTop: "2rem", width: "15rem" },
+        "& > :not(style)": { marginTop: "2rem", width: "12.5rem" },
       }}
     >
       <TextField

@@ -19,7 +19,7 @@ function PeopleCountComponent() {
       noValidate
       autoComplete="off"
       sx={{
-        "& > :not(style)": { marginTop: "1rem", width: "15rem" },
+        "& > :not(style)": { marginTop: "1rem", width: "12.5rem" },
       }}
     >
       <TextField

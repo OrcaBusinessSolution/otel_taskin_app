@@ -8,7 +8,7 @@ function ContactInfoComponent() {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleChangeEmail = (event) => {
-    setEmail(event.target.value);
+      setEmail(event.target.value);
   };
   const handleChangePhoneNumber = (event) => {
     setPhoneNumber(event.target.value);
@@ -18,7 +18,7 @@ function ContactInfoComponent() {
       component="form"
       autoComplete="off"
       sx={{
-        "& > :not(style)": { marginTop: "1rem", width: "15rem" },
+        "& > :not(style)": { marginTop: "1rem", width: "12.5rem" },
       }}
     >
       <TextField
