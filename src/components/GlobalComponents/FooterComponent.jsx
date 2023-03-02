@@ -30,7 +30,7 @@ const ContentDiv = styled.div`
   align-items: center;
   justify-content: space-evenly;
   padding: 1rem;
-  @media only screen and (max-width: 958px) {
+  @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
 `;
