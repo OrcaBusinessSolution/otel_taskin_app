@@ -19,6 +19,11 @@ const Container = styled.div`
 
 const HeaderDiv = styled.div`
   margin-right: 2rem;
+  display:flex;
+  flex:1;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
   & a {
     color: white;
     letter-spacing: 0.1em;
@@ -28,6 +33,9 @@ const HeaderDiv = styled.div`
   & a:hover {
     color: #c12200;
     font-size: 18px;
+  }
+  @media only screen and (max-width: 768px){
+    flex-direction: column;
   }
 `;
 
@@ -44,7 +52,7 @@ function Header() {
       </Link><hr/>
       <HeaderDiv>
         <Link to="/" underline="none">
-          ANASAYFA
+          ANA SAYFA
         </Link>
         <Link to="/rooms" underline="none">
           ODALAR
