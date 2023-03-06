@@ -6,7 +6,6 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
   font-family: Roboto, sans-serif;
   font-size: 17px;
@@ -14,13 +13,18 @@ const Container = styled.div`
   padding: 2rem;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    & img {
+      height: 4rem;
+      width: 12rem;
+      margin-right: 2rem;
+    }
   }
 `;
 
 const HeaderDiv = styled.div`
   margin-right: 2rem;
-  display:flex;
-  flex:1;
+  display: flex;
+  flex: 1;
   flex-direction: row;
   justify-content: end;
   align-items: center;
@@ -34,13 +38,13 @@ const HeaderDiv = styled.div`
     color: #c12200;
     font-size: 18px;
   }
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
 `;
 
 const ImageDiv = styled.img`
-  height: 5em;
+  height: 5rem;
   margin-left: 2rem;
 `;
 
@@ -48,8 +52,12 @@ function Header() {
   return (
     <Container>
       <Link to="/">
-        <ImageDiv src={"./pictures/logo.png"} alt="otel, taşkın otel, keşan"></ImageDiv>
-      </Link><hr/>
+        <ImageDiv
+          src={"./pictures/logo.png"}
+          alt="otel, taşkın otel, keşan"
+        ></ImageDiv>
+      </Link>
+      <hr />
       <HeaderDiv>
         <Link to="/" underline="none">
           ANA SAYFA
