@@ -8,6 +8,7 @@ import Gallery from "./pages/Gallery";
 import Home from "./pages/Home";
 import Reservation from "./pages/Reservation";
 import Rooms from "./pages/Rooms";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -20,6 +21,8 @@ export default function App() {
       <Route path="standartRoom" element={<StandartRoomDetails />} />
       <Route path="doubleRoom" element={<DoubleRoomDetails />} />
       <Route path="tripleRoom" element={<TripleRoomDetail />} />
+      <Route path='*' element={<NotFound />}/>
+
     </Routes>
   );
 }
