@@ -20,6 +20,7 @@ const InfoDiv = styled.div`
   & p:hover{
     font-size: 18px;
     font-weight: bold;
+    color: #c12200;
   }
 `;
 const ContactDiv = styled.div`

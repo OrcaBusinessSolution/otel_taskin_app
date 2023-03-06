@@ -33,9 +33,10 @@ const HeaderDiv = styled.div`
     letter-spacing: 0.1em;
     margin-left: 1.5em;
     color: #606060;
+    text-decoration: none;
   }
   & a:hover {
-    color: #c12200;
+    color: #deb666;
     font-size: 18px;
   }
   @media only screen and (max-width: 768px) {
@@ -59,21 +60,11 @@ function Header() {
       </Link>
       <hr />
       <HeaderDiv>
-        <Link to="/" underline="none">
-          ANA SAYFA
-        </Link>
-        <Link to="/rooms" underline="none">
-          ODALAR
-        </Link>
-        <Link to="/gallery" underline="none">
-          GALERİ
-        </Link>
-        <Link to="/reservation" underline="none">
-          REZERVASYON
-        </Link>
-        <Link to="/communication" underline="none">
-          İLETİŞİM
-        </Link>
+        <Link to="/">ANA SAYFA</Link>
+        <Link to="/rooms">ODALAR</Link>
+        <Link to="/gallery">GALERİ</Link>
+        <Link to="/reservation">REZERVASYON</Link>
+        <Link to="/communication">İLETİŞİM</Link>
       </HeaderDiv>
     </Container>
   );
