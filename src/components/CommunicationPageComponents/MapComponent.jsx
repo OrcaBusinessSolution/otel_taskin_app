@@ -10,6 +10,7 @@ justify-content: center;
   @media only screen and (max-width: 958px) {
     width: 100%;
     height: 30rem;
+    margin-top: 5rem;
   }
 `;
 

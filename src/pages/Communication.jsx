@@ -4,8 +4,8 @@ import HeaderInfo from "../components/GlobalComponents/HeaderInfoComponent";
 import Header from "../components/GlobalComponents/HeaderComponent";
 import Footer from "../components/GlobalComponents/FooterComponent";
 import { HeaderName } from "../pages/Rooms";
-import FormComponents from "../components/CommunicationPageComponents/FormComponent";
 import MapComponent from "../components/CommunicationPageComponents/MapComponent";
+import FormComponents from "../components/CommunicationPageComponents/FormComponents";
 
 const Container = styled.div`
 margin-bottom: 5rem;
