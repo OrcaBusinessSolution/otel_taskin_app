@@ -4,11 +4,9 @@ import { HeaderName } from "../pages/Rooms";
 import HeaderInfo from "../components/GlobalComponents/HeaderInfoComponent";
 import Header from "../components/GlobalComponents/HeaderComponent";
 import Footer from "../components/GlobalComponents/FooterComponent";
-import PhotoGallery from "../components/GalleryPageComponents/PhotoGallery";
+import GallerySlide from "../components/GalleryPageComponents/GallerySlide";
 
-
-const Container = styled.div`
-`;
+const Container = styled.div``;
 function Gallery() {
   return (
     <>
@@ -18,11 +16,11 @@ function Gallery() {
         <HeaderName>
           <h1>Galeri</h1>
         </HeaderName>
-        <PhotoGallery/>
+        <GallerySlide />
       </Container>
-      <Footer/>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Gallery
+export default Gallery;
