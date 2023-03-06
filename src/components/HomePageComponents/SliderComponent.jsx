@@ -15,7 +15,7 @@ const SliderDiv = styled.div`
 `;
 
 const ImageDiv = styled.img`
-  width: 50%;
+  width: 40%;
   margin: auto;
   padding: auto;
   align-items: center;
