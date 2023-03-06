@@ -4,7 +4,7 @@ import { HeaderName } from "../pages/Rooms";
 import HeaderInfo from "../components/GlobalComponents/HeaderInfoComponent";
 import Header from "../components/GlobalComponents/HeaderComponent";
 import Footer from "../components/GlobalComponents/FooterComponent";
-import FormComponent from "../components/ReservationPageComponents/FormComponent";
+import ReservationComponent from "../components/ReservationPageComponents/ReservationComponent";
 
 const Container = styled.div`
   margin-bottom: 5rem;
@@ -19,7 +19,7 @@ function Reservation() {
         <HeaderName>
           <h1>Rezervasyon</h1>
         </HeaderName>
-        <FormComponent />
+        <ReservationComponent/>
       </Container>
       <Footer />
     </>
