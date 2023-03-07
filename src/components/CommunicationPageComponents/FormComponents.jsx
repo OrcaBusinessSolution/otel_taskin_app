@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
+import Stack from "@mui/material/Stack";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 const FormDiv = styled.div`
   align-items: center;
@@ -42,7 +46,52 @@ const RoomsButton = styled.button`
   }
 `;
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 function FormComponents() {
+  const [open, setOpen] = useState(false);
+
+  const form = useRef();
+
+  const handleClick = async () => {
+    setOpen(true);
+  };
+
+  const resetForm = async () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhoneNumber("");
+    setNote("");
+  };
+
+  const alertAndResetForm = async () => {
+    await handleClick();
+    await resetForm();
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
+  const sendEmail = (event) => {
+    event.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_28g5uop",
+        "template_zesuvyf",
+        form.current,
+        "uLB1EpG4KDSdc4rph"
+      )
+      .then(alertAndResetForm());
+  };
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -66,7 +115,7 @@ function FormComponents() {
   };
   return (
     <FormDiv>
-      <form>
+      <form ref={form} onSubmit={sendEmail}>
         <PairDiv>
           <div className="form-group">
             <label htmlFor="firstName">İsim</label>
@@ -76,6 +125,7 @@ function FormComponents() {
               className="form-control"
               id="firstName"
               value={firstName}
+              name="firstName"
               onChange={handleFirstName}
               placeholder="İsminizi girin"
             />
@@ -88,6 +138,7 @@ function FormComponents() {
               className="form-control"
               id="lastName"
               value={lastName}
+              name="lastName"
               onChange={handleLastName}
               aria-describedby="emailHelp"
               placeholder="Soy isminizi girin"
@@ -102,6 +153,7 @@ function FormComponents() {
               className="form-control"
               id="email"
               value={email}
+              name="email"
               onChange={handleEmail}
               placeholder="Mail adresinizi girin"
             />
@@ -114,6 +166,7 @@ function FormComponents() {
               className="form-control"
               id="phoneNumber"
               value={phoneNumber}
+              name="phoneNumber"
               onChange={handlePhoneNumber}
               aria-describedby="emailHelp"
               placeholder="Numaranızı girin"
@@ -131,12 +184,24 @@ function FormComponents() {
               className="form-control"
               id="note"
               value={note}
+              name="note"
               onChange={handleNote}
               placeholder="Eklemek istedikleriniz.."
             />
           </div>
         </PairDiv>
         <RoomsButton type="submit">MESAJINI GÖNDER</RoomsButton>
+        <Stack spacing={2} sx={{ width: "100%" }}>
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              Mailiniz iletilmiştir.
+            </Alert>
+          </Snackbar>
+        </Stack>
       </form>
     </FormDiv>
   );
