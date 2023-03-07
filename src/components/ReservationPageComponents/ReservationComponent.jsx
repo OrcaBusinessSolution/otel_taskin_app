@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
+import Stack from "@mui/material/Stack";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 const Container = styled.div`
   display: flex;
@@ -38,8 +42,56 @@ const RoomsButton = styled.button`
     color: #deb666;
   }
 `;
-
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 function ReservationComponent() {
+  const [open, setOpen] = useState(false);
+
+  const form = useRef();
+
+  const handleClick = async () => {
+    setOpen(true);
+  };
+
+  const resetForm = async () => {
+    setRoomType("");
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhoneNumber("");
+    setStartDate("");
+    setEndDate("");
+    setAdultCount("");
+    setChildCount("");
+    setNote("");
+  };
+
+  const alertAndResetForm = async () => {
+    await handleClick();
+    await resetForm();
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
+  const sendEmail = (event) => {
+    event.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_28g5uop",
+        "template_1ihzn0n",
+        form.current,
+        "uLB1EpG4KDSdc4rph"
+      )
+      .then(alertAndResetForm());
+  };
+
   const [roomType, setRoomType] = useState("Standart Oda");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -85,7 +137,7 @@ function ReservationComponent() {
 
   return (
     <Container>
-      <form>
+      <form ref={form} onSubmit={sendEmail}>
         <PairDiv>
           <select
             className="selectpicker show-tick form-select form-select-md"
@@ -93,6 +145,7 @@ function ReservationComponent() {
             onChange={handleRoomType}
             required
             id="roomType"
+            name="roomType"
           >
             <option value="Standart Oda">Standart Oda</option>
             <option value="Double Oda">Double Oda</option>
@@ -108,6 +161,7 @@ function ReservationComponent() {
               className="form-control"
               id="firstName"
               value={firstName}
+              name="firstName"
               onChange={handleFirstName}
               placeholder="İsminizi girin"
             />
@@ -120,6 +174,7 @@ function ReservationComponent() {
               className="form-control"
               id="lastName"
               value={lastName}
+              name="lastName"
               onChange={handleLastName}
               aria-describedby="emailHelp"
               placeholder="Soy isminizi girin"
@@ -130,10 +185,12 @@ function ReservationComponent() {
           <div className="form-group">
             <label htmlFor="email">E-Mail</label>
             <input
+              required
               type="email"
               className="form-control"
               id="email"
               value={email}
+              name="email"
               onChange={handleEmail}
               placeholder="Mail adresinizi girin"
             />
@@ -146,6 +203,7 @@ function ReservationComponent() {
               className="form-control"
               id="phoneNumber"
               value={phoneNumber}
+              name="phoneNumber"
               onChange={handlePhoneNumber}
               aria-describedby="emailHelp"
               placeholder="Numaranızı girin"
@@ -159,7 +217,9 @@ function ReservationComponent() {
               required
               type="date"
               className="form-control"
+              id="startDate"
               value={startDate}
+              name="startDate"
               onChange={handleStartDate}
             />
           </div>
@@ -170,6 +230,7 @@ function ReservationComponent() {
               type="date"
               className="form-control"
               id="endDate"
+              name="endDate"
               value={endDate}
               onChange={handleEndDate}
             />
@@ -185,6 +246,7 @@ function ReservationComponent() {
               className="form-control"
               id="adultCount"
               value={adultCount}
+              name="adultCount"
               onChange={handleAdultCount}
               placeholder="Yetişkin sayısı"
             />
@@ -198,6 +260,7 @@ function ReservationComponent() {
               className="form-control"
               id="childCount"
               value={childCount}
+              name="childCount"
               onChange={handleChildCount}
               aria-describedby="emailHelp"
               placeholder="Çocuk sayısı"
@@ -214,19 +277,24 @@ function ReservationComponent() {
               className="form-control"
               id="note"
               value={note}
+              name="note"
               onChange={handleNote}
               placeholder="Eklemek istedikleriniz.."
             />
           </div>
         </PairDiv>
-        <RoomsButton
-          onClick={() => {
-            console.log(roomType);
-          }}
-          type="submit"
-        >
-          REZERVASYON OLUŞTUR
-        </RoomsButton>
+        <Stack spacing={2} sx={{ width: "100%" }}>
+          <RoomsButton type="submit">REZERVASYON OLUŞTUR</RoomsButton>
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              Mailiniz iletilmiştir.
+            </Alert>
+          </Snackbar>
+        </Stack>
       </form>
     </Container>
   );
