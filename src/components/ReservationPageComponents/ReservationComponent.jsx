@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import emailjs from "@emailjs/browser";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import axios from "axios";
 
 const Container = styled.div`
   display: flex;
@@ -45,10 +45,53 @@ const RoomsButton = styled.button`
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
+
 function ReservationComponent() {
+  const form = useRef();
+
+  const [roomType, setRoomType] = useState("Standart Oda");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [adultCount, setAdultCount] = useState("");
+  const [childCount, setChildCount] = useState("");
+  const [note, setNote] = useState("");
   const [open, setOpen] = useState(false);
 
-  const form = useRef();
+  const handleRoomType = (event) => {
+    setRoomType(event.target.value);
+  };
+
+  const handleFirstName = (event) => {
+    setFirstName(event.target.value);
+  };
+  const handleLastName = (event) => {
+    setLastName(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePhoneNumber = (event) => {
+    setPhoneNumber(event.target.value);
+  };
+  const handleStartDate = (event) => {
+    setStartDate(event.target.value);
+  };
+  const handleEndDate = (event) => {
+    setEndDate(event.target.value);
+  };
+  const handleAdultCount = (event) => {
+    setAdultCount(event.target.value);
+  };
+  const handleChildCount = (event) => {
+    setChildCount(event.target.value);
+  };
+  const handleNote = (event) => {
+    setNote(event.target.value);
+  };
 
   const handleClick = async () => {
     setOpen(true);
@@ -82,58 +125,70 @@ function ReservationComponent() {
   const sendEmail = (event) => {
     event.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_28g5uop",
-        "template_1ihzn0n",
-        form.current,
-        "uLB1EpG4KDSdc4rph"
-      )
-      .then(alertAndResetForm());
+    axios
+      .post("http://88.208.226.24:4001/api/mail/mailsender", {
+        body: message,
+        subject: "Rezervasyon Talebi",
+      })
+      .then((res) => {
+        console.log("Posting data", res);
+        if (res.data.status === true) {
+          alertAndResetForm();
+        }
+      })
+
+      .catch((err) => console.log(err));
   };
 
-  const [roomType, setRoomType] = useState("Standart Oda");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [adultCount, setAdultCount] = useState("");
-  const [childCount, setChildCount] = useState("");
-  const [note, setNote] = useState("");
 
-  const handleRoomType = (event) => {
-    setRoomType(event.target.value);
-  };
 
-  const handleFirstName = (event) => {
-    setFirstName(event.target.value);
-  };
-  const handleLastName = (event) => {
-    setLastName(event.target.value);
-  };
-  const handleEmail = (event) => {
-    setEmail(event.target.value);
-  };
-  const handlePhoneNumber = (event) => {
-    setPhoneNumber(event.target.value);
-  };
-  const handleStartDate = (event) => {
-    setStartDate(event.target.value);
-  };
-  const handleEndDate = (event) => {
-    setEndDate(event.target.value);
-  };
-  const handleAdultCount = (event) => {
-    setAdultCount(event.target.value);
-  };
-  const handleChildCount = (event) => {
-    setChildCount(event.target.value);
-  };
-  const handleNote = (event) => {
-    setNote(event.target.value);
-  };
+  const message = `<p>&nbsp;</p>
+<p style="padding-left: 80px;"><span style="font-size: 14pt;"><strong>Yeni rezervasyon talebi!</strong></span></p>
+<p style="text-align: left; padding-left: 40px;">&nbsp;</p>
+<table style="border-collapse: collapse; width: 45.8707%; height: 226px; margin-left: 40px; margin-right: auto;" border="1"><colgroup><col style="width: 33.5037%;"><col style="width: 66.4963%;"></colgroup>
+<tbody>
+<tr style="height: 50px;">
+<td style="height: 22px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>Oda T&uuml;r&uuml;</strong></span></td>
+<td style="height: 22px; text-align: center;">${roomType}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 22px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>İsim</strong></span></td>
+<td style="height: 22px; text-align: center;">${firstName}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 22px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>Soy İsim</strong></span></td>
+<td style="height: 22px; text-align: center;">${lastName}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 22px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>Email</strong></span></td>
+<td style="height: 22px; text-align: center;">${email}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 44px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>Telefon Numarası</strong></span></td>
+<td style="height: 44px; text-align: center;">${phoneNumber}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 22px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>Giriş Tarihi&nbsp;</strong></span></td>
+<td style="height: 22px; text-align: center;">${startDate}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 18px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>&Ccedil;ıkış Tarihi</strong></span></td>
+<td style="height: 18px; text-align: center;">${endDate}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 18px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>Yetişkin Sayısı</strong></span></td>
+<td style="height: 18px; text-align: center;">${adultCount}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 18px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>&Ccedil;ocuk Sayısı</strong></span></td>
+<td style="height: 18px; text-align: center;">${childCount}</td>
+</tr>
+<tr style="height: 50px;">
+<td style="height: 18px; text-align: center;"><span style="font-family: 'times new roman', times, serif; font-size: 14pt;"><strong>Not</strong></span></td>
+<td style="height: 18px; text-align: center;">${note}</td>
+</tr>
+</tbody>
+</table>`;
 
   return (
     <Container>

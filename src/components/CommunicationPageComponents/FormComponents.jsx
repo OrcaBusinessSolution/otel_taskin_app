@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import emailjs from "@emailjs/browser";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import axios from "axios";
 
 const FormDiv = styled.div`
   align-items: center;
@@ -51,9 +51,30 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 function FormComponents() {
+  const form = useRef();
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [note, setNote] = useState("");
   const [open, setOpen] = useState(false);
 
-  const form = useRef();
+  const handleFirstName = (event) => {
+    setFirstName(event.target.value);
+  };
+  const handleLastName = (event) => {
+    setLastName(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePhoneNumber = (event) => {
+    setPhoneNumber(event.target.value);
+  };
+  const handleNote = (event) => {
+    setNote(event.target.value);
+  };
 
   const handleClick = async () => {
     setOpen(true);
@@ -81,38 +102,31 @@ function FormComponents() {
 
   const sendEmail = (event) => {
     event.preventDefault();
+    axios
+      .post("http://88.208.226.24:4001/api/mail/mailsender", {
+        body: message,
+        subject: "İletişim Hakkında",
+      })
+      .then((res) => {
+        console.log("Posting data", res);
+        if (res.data.status === true) {
+          alertAndResetForm();
+        }
+      })
 
-    emailjs
-      .sendForm(
-        "service_28g5uop",
-        "template_zesuvyf",
-        form.current,
-        "uLB1EpG4KDSdc4rph"
-      )
-      .then(alertAndResetForm());
+      .catch((err) => console.log(err));
   };
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [note, setNote] = useState("");
+  const message = `<p><strong>Merhaba,</strong></p>
+  <p><strong>${firstName} &nbsp;${lastName} tarafından g&ouml;nderilen yeni mesajınız var.</strong></p>
+  <p style="padding-left: 40px;">&nbsp;</p>
+  <p style="padding: 12px; border-left: 4px solid rgb(208, 208, 208); font-style: italic;"><span style="font-size: 14pt;">${note}</span></p>
+  <p>&nbsp;</p>
+  <p style="text-align: left;"><span style="text-decoration: underline;"><strong>İletişim Bilgileri&nbsp;</strong></span></p>
+  <p style="text-align: left; padding-left: 40px;">&nbsp;</p>
+  <p style="text-align: left;"><strong>E-Mail : </strong>${email}</p>
+  <p style="text-align: left;"><strong>Telefon Numarası : </strong>${phoneNumber}</p>`;
 
-  const handleFirstName = (event) => {
-    setFirstName(event.target.value);
-  };
-  const handleLastName = (event) => {
-    setLastName(event.target.value);
-  };
-  const handleEmail = (event) => {
-    setEmail(event.target.value);
-  };
-  const handlePhoneNumber = (event) => {
-    setPhoneNumber(event.target.value);
-  };
-  const handleNote = (event) => {
-    setNote(event.target.value);
-  };
   return (
     <FormDiv>
       <form ref={form} onSubmit={sendEmail}>
