@@ -16,8 +16,8 @@ const InfoDiv = styled.div`
   align-items: center;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
-  } 
-  & p:hover{
+  }
+  & p:hover {
     font-size: 18px;
     font-weight: bold;
     color: #c12200;

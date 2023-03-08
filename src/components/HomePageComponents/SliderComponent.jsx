@@ -33,7 +33,7 @@ const properties = {
 function Slider() {
   return (
     <SliderDiv>
-      <Slide {...properties}> 
+      <Slide {...properties}>
         <ImageDiv src={"./pictures/oda1.JPG"} />
         <ImageDiv src={"./pictures/oda2.JPG"} />
         <ImageDiv src={"./pictures/standart.JPG"} />

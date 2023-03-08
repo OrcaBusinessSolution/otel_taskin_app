@@ -19,7 +19,7 @@ function Reservation() {
         <HeaderName>
           <h1>Rezervasyon</h1>
         </HeaderName>
-        <ReservationComponent/>
+        <ReservationComponent />
       </Container>
       <Footer />
     </>

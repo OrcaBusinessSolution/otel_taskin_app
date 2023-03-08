@@ -4,11 +4,11 @@ import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 const Container = styled.div`
-display: flex;
-flex: 1;
-justify-content: center;
-margin-bottom: 4rem;
-margin-top: 1rem;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
 `;
 
 const ImagesDiv = styled.div`
@@ -29,7 +29,12 @@ function GallerySlide() {
       <ImagesDiv>
         <Zoom scale={0.2} duration={3000}>
           {images.map((each, index) => (
-            <img alt="otel,room,oda" key={index} style={{ width: "100%",}} src={each}  />
+            <img
+              alt="otel,room,oda"
+              key={index}
+              style={{ width: "100%" }}
+              src={each}
+            />
           ))}
         </Zoom>
       </ImagesDiv>

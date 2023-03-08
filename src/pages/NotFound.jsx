@@ -60,7 +60,7 @@ function NotFound() {
           <h1>404</h1>
           <h2>SAYFA BULUNAMADI</h2>
           <Link to="/">
-            <RoomsButton >Ana Sayfaya Dön</RoomsButton>
+            <RoomsButton>Ana Sayfaya Dön</RoomsButton>
           </Link>
         </Content>
       </Container>

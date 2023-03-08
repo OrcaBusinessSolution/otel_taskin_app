@@ -8,14 +8,14 @@ import MapComponent from "../components/CommunicationPageComponents/MapComponent
 import FormComponents from "../components/CommunicationPageComponents/FormComponents";
 
 const Container = styled.div`
-margin-bottom: 5rem;
+  margin-bottom: 5rem;
 `;
 const TotalDiv = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  justify-content:space-around;
-  text-align:center;
+  justify-content: space-around;
+  text-align: center;
   padding: 2rem;
   margin-bottom: -1.5rem;
   @media only screen and (max-width: 958px) {
@@ -33,11 +33,11 @@ function Communication() {
           <h1>İletişim</h1>
         </HeaderName>
         <TotalDiv>
-          <FormComponents/>
-          <MapComponent/>
+          <FormComponents />
+          <MapComponent />
         </TotalDiv>
       </Container>
-      <Footer/>
+      <Footer />
     </>
   );
 }

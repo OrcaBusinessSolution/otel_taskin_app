@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const MapDiv = styled.div`
-width: 50%;
-height: 30rem;
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 50%;
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media only screen and (max-width: 958px) {
     width: 100%;
     height: 30rem;

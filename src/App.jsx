@@ -21,8 +21,7 @@ export default function App() {
       <Route path="standartRoom" element={<StandartRoomDetails />} />
       <Route path="doubleRoom" element={<DoubleRoomDetails />} />
       <Route path="tripleRoom" element={<TripleRoomDetail />} />
-      <Route path='*' element={<NotFound />}/>
-
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

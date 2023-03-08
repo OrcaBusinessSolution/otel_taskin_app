@@ -140,8 +140,6 @@ function ReservationComponent() {
       .catch((err) => console.log(err));
   };
 
-
-
   const message = `<p>&nbsp;</p>
 <p style="padding-left: 80px;"><span style="font-size: 14pt;"><strong>Yeni rezervasyon talebi!</strong></span></p>
 <p style="text-align: left; padding-left: 40px;">&nbsp;</p>

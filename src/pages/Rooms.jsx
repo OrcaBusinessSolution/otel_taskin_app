@@ -28,7 +28,7 @@ function Rooms() {
         <HeaderName>
           <h1>Odalar</h1>
         </HeaderName>
-        <RoomsComponent/>
+        <RoomsComponent />
       </Container>
       <Footer />
     </>
