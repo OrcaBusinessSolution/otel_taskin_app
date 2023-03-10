@@ -4,6 +4,7 @@ import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Container = styled.div`
   display: flex;
@@ -60,6 +61,7 @@ function ReservationComponent() {
   const [childCount, setChildCount] = useState("");
   const [note, setNote] = useState("");
   const [open, setOpen] = useState(false);
+  const [verified, setVerified] = useState(false);
 
   const handleRoomType = (event) => {
     setRoomType(event.target.value);
@@ -120,6 +122,10 @@ function ReservationComponent() {
       return;
     }
     setOpen(false);
+  };
+
+  const onChange = (value) => {
+    setVerified(true);
   };
 
   const sendEmail = (event) => {
@@ -336,8 +342,17 @@ function ReservationComponent() {
             />
           </div>
         </PairDiv>
+        <PairDiv>
+          <ReCAPTCHA
+            sitekey="6Ler9-ckAAAAAK4OPriOc9FikmGCkOCONW9jWBsS"
+            onChange={onChange}
+            hl="tr"
+          />
+        </PairDiv>
         <Stack spacing={2} sx={{ width: "100%" }}>
-          <RoomsButton type="submit">REZERVASYON OLUŞTUR</RoomsButton>
+          <RoomsButton type="submit" disabled={!verified}>
+            REZERVASYON OLUŞTUR
+          </RoomsButton>
           <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
             <Alert
               onClose={handleClose}

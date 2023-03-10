@@ -4,6 +4,7 @@ import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const FormDiv = styled.div`
   align-items: center;
@@ -59,6 +60,7 @@ function FormComponents() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [note, setNote] = useState("");
   const [open, setOpen] = useState(false);
+  const [verified, setVerified] = useState(false);
 
   const handleFirstName = (event) => {
     setFirstName(event.target.value);
@@ -98,6 +100,11 @@ function FormComponents() {
       return;
     }
     setOpen(false);
+  };
+
+  const onChange = (value) => {
+    console.log("Captcha value:", value);
+    setVerified(true);
   };
 
   const sendEmail = (event) => {
@@ -204,7 +211,16 @@ function FormComponents() {
             />
           </div>
         </PairDiv>
-        <RoomsButton type="submit">MESAJINI GÖNDER</RoomsButton>
+        <PairDiv>
+          <ReCAPTCHA
+            sitekey="6Ler9-ckAAAAAK4OPriOc9FikmGCkOCONW9jWBsS"
+            onChange={onChange}
+            hl="tr"
+          />
+        </PairDiv>
+        <RoomsButton type="submit" disabled={!verified}>
+          MESAJINI GÖNDER
+        </RoomsButton>
         <Stack spacing={2} sx={{ width: "100%" }}>
           <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
             <Alert
