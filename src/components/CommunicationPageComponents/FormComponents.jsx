@@ -194,7 +194,6 @@ function FormComponents() {
             />
           </div>
         </PairDiv>
-
         <PairDiv>
           <div className="form-group">
             <label htmlFor="note">Not(Opsiyonel)</label>
@@ -213,7 +212,7 @@ function FormComponents() {
         </PairDiv>
         <PairDiv>
           <ReCAPTCHA
-            sitekey="6Ler9-ckAAAAAK4OPriOc9FikmGCkOCONW9jWBsS"
+            sitekey="6LcxzOckAAAAAGH-0_9zfKQIGDjQnQgORqTJC9ds"
             onChange={onChange}
             hl="tr"
           />
