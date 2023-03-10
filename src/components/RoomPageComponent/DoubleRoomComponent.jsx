@@ -68,7 +68,7 @@ function DoubleRoomComponent() {
       <InfoDiv>
         <h4>Oda Özellikleri</h4>
         <RoomFeatures />
-        <Link to="/reservation">
+        <Link to="/reservation/doubleRoom">
           <RoomsButton>
             REZERVASYON OLUŞTUR <ArrowForwardIosIcon fontSize="small" />
           </RoomsButton>

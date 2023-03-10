@@ -70,7 +70,7 @@ function StandartRoomComponent() {
       <InfoDiv>
         <h4>Oda Özellikleri</h4>
         <RoomFeatures />
-        <Link to="/reservation">
+        <Link to="/reservation/standartRoom">
           <RoomsButton>
             REZERVASYON OLUŞTUR <ArrowForwardIosIcon fontSize="small" />
           </RoomsButton>

@@ -16,7 +16,9 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="rooms" element={<Rooms />} />
       <Route path="gallery" element={<Gallery />} />
-      <Route path="reservation" element={<Reservation />} />
+      <Route path="reservation" element={<Reservation />} >
+        <Route path=":roomType" element={<Reservation />} />
+      </Route>
       <Route path="communication" element={<Communication />} />
       <Route path="standartRoom" element={<StandartRoomDetails />} />
       <Route path="doubleRoom" element={<DoubleRoomDetails />} />

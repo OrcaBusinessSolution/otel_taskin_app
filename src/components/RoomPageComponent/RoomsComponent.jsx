@@ -99,7 +99,7 @@ function RoomsComponent() {
         <InfoDiv>
           <h5>Standart Oda</h5>
           <p>Tek kişiler için uygun olarak tasarlanmış Standart odamız</p>
-          <Link to="/reservation">
+          <Link to="/reservation/standartRoom">
             <RoomsButton>
               REZERVASYON <ArrowForwardIosIcon fontSize="small" />
             </RoomsButton>
@@ -118,7 +118,7 @@ function RoomsComponent() {
         <InfoDiv>
           <h5>Double Oda</h5>
           <p>İki kişilik ihtiyaçlar için tasarlanmış Double odamız</p>
-          <Link to="/reservation">
+          <Link to="/reservation/doubleRoom">
             <RoomsButton>
               REZERVASYON <ArrowForwardIosIcon fontSize="small" />
             </RoomsButton>
@@ -139,7 +139,7 @@ function RoomsComponent() {
           <p>
             Üç ve daha fazla kişilik ihtiyaçlar için tasarlanmış Triple odamız
           </p>
-          <Link to="/reservation">
+          <Link to="/reservation/tripleRoom">
             <RoomsButton>
               REZERVASYON <ArrowForwardIosIcon fontSize="small" />
             </RoomsButton>

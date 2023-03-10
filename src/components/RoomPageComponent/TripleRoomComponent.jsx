@@ -70,7 +70,7 @@ function TripleRoomComponent() {
       <InfoDiv>
         <h4>Oda Özellikleri</h4>
         <RoomFeatures />
-        <Link to="/reservation">
+        <Link to="/reservation/tripleRoom">
           <RoomsButton>
             REZERVASYON OLUŞTUR <ArrowForwardIosIcon fontSize="small" />
           </RoomsButton>
