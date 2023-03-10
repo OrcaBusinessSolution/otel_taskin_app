@@ -11,7 +11,7 @@ const Container = styled.div`
   font-size: 17px;
   font-weight: 1000;
   padding: 2rem;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 982px) {
     flex-direction: column;
     & img {
       height: 4rem;
@@ -34,13 +34,16 @@ const HeaderDiv = styled.div`
     margin-left: 1.5em;
     color: #606060;
     text-decoration: none;
+    font-size: 17px;
   }
   & a:hover {
     color: #deb666;
+  }
+  @media only screen and (max-width: 982px) {
+    flex-direction: column;
+    & a {
     font-size: 18px;
   }
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
   }
 `;
 
