@@ -49,11 +49,11 @@ const RoomDiv = styled.div`
   }
   & img:hover {
     opacity: 1;
-    transform: translate(-20px);
-    transition: all 0.6s ease-in-out;
-    -webkit-transform: translate(-20px);
+    transform: translate(-10px);
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: translate(-10px);
     cursor: pointer;
-    box-shadow: 10px 10px 10px #606060;
+    box-shadow: 4px 4px 4px #606060;
   }
 `;
 
@@ -90,17 +90,21 @@ function Rooms() {
       </HeaderDiv>
       <RoomsDiv>
         <RoomDiv>
-          <ImageDiv src={"./pictures/standart.JPG"}></ImageDiv>
+          <Link to="/standartRoom">
+            <ImageDiv src={"./pictures/standart.JPG"}></ImageDiv>
+          </Link>
           <h5>Standart Oda</h5>
         </RoomDiv>
-
         <RoomDiv>
-          <ImageDiv src={"./pictures/double.JPG"}></ImageDiv>
+          <Link to="/doubleRoom">
+            <ImageDiv src={"./pictures/double.JPG"}></ImageDiv>
+          </Link>
           <h5>Double Oda</h5>
         </RoomDiv>
-
         <RoomDiv>
-          <ImageDiv src={"./pictures/triple.JPG"}></ImageDiv>
+          <Link to="/tripleRoom">
+            <ImageDiv src={"./pictures/triple.JPG"}></ImageDiv>
+          </Link>
           <h5>Triple Oda</h5>
         </RoomDiv>
       </RoomsDiv>

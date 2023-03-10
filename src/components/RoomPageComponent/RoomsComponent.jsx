@@ -21,11 +21,11 @@ const RoomDiv = styled.div`
   border-bottom: 2px solid #d1d0cf;
   & img:hover {
     opacity: 1;
-    transform: translate(-20px);
-    transition: all 0.6s ease-in-out;
-    -webkit-transform: translate(0px, 10px);
+    transform: translate(-10px);
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: translate(0px, 5px);
     cursor: pointer;
-    box-shadow: 15px 15px 15px #606060;
+    box-shadow: 4px 4px 4px #606060;
   }
   @media only screen and (max-width: 958px) {
     flex-direction: column;
@@ -93,7 +93,9 @@ function RoomsComponent() {
   return (
     <RoomsDiv>
       <RoomDiv>
-        <ImageDiv src={"./pictures/standart.JPG"}></ImageDiv>
+        <Link to="/standartRoom">
+          <ImageDiv src={"./pictures/standart.JPG"}></ImageDiv>
+        </Link>
         <InfoDiv>
           <h5>Standart Oda</h5>
           <p>Tek kişiler için uygun olarak tasarlanmış Standart odamız</p>
@@ -110,7 +112,9 @@ function RoomsComponent() {
         </InfoDiv>
       </RoomDiv>
       <RoomDiv>
-        <ImageDiv src={"./pictures/double.JPG"}></ImageDiv>
+        <Link to="/doubleRoom">
+          <ImageDiv src={"./pictures/double.JPG"}></ImageDiv>
+        </Link>
         <InfoDiv>
           <h5>Double Oda</h5>
           <p>İki kişilik ihtiyaçlar için tasarlanmış Double odamız</p>
@@ -127,7 +131,9 @@ function RoomsComponent() {
         </InfoDiv>
       </RoomDiv>
       <RoomDiv>
-        <ImageDiv src={"./pictures/triple.JPG"}></ImageDiv>
+        <Link to="/tripleRoom">
+          <ImageDiv src={"./pictures/triple.JPG"}></ImageDiv>
+        </Link>
         <InfoDiv>
           <h5>Triple Oda</h5>
           <p>
