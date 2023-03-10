@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef , useEffect } from "react";
 import styled from "styled-components";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+import {useParams} from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -49,7 +50,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 function ReservationComponent() {
   const form = useRef();
-
+  let params = useParams();
   const [roomType, setRoomType] = useState("Standart Oda");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -62,7 +63,15 @@ function ReservationComponent() {
   const [note, setNote] = useState("");
   const [open, setOpen] = useState(false);
   const [verified, setVerified] = useState(false);
-
+  useEffect(()=>{
+    (params.roomType === "standartRoom") && setRoomType("Standart Oda")
+  },[])
+  useEffect(()=>{
+    (params.roomType === "doubleRoom") && setRoomType("Double Oda")
+  },[])
+  useEffect(()=>{
+    (params.roomType === "tripleRoom") && setRoomType("Triple Oda")
+  },[])
   const handleRoomType = (event) => {
     setRoomType(event.target.value);
   };
@@ -206,9 +215,15 @@ function ReservationComponent() {
             id="roomType"
             name="roomType"
           >
-            <option value="Standart Oda">Standart Oda</option>
-            <option value="Double Oda">Double Oda</option>
-            <option value="Triple Oda">Triple Oda</option>
+            <option value="Standart Oda" id="standartRoom">
+              Standart Oda
+            </option>
+            <option value="Double Oda" id="doubleRoom">
+              Double Oda
+            </option>
+            <option value="Triple Oda" id="tripleRoom">
+              Triple Oda
+            </option>
           </select>
         </PairDiv>
         <PairDiv>
